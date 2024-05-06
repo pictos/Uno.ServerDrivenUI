@@ -1,0 +1,30 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.38">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0-windows10.0.19041;</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+
+  <ItemGroup Condition="$(TargetFramework.Contains('-windows')) == true ">
+    <PackageReference Include="Microsoft.WindowsAppSDK" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
+  </ItemGroup>
+
+  <ItemGroup>
+		<PackageReference Include="Uno.WinUI" Version="5.1.31"/>
+		<PackageReference Include="Uno.UI.RuntimeTests.Engine" Version="0.36.0-dev.124"/>
+		<PackageReference Include="MSTest.TestFramework" Version="3.3.1"/>
+		<PackageReference Include="FluentAssertions" Version="6.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Uno.DrivenUI.Client\Uno.ServerDrivenUI.csproj" />
+  </ItemGroup>
+
+
+</Project>
